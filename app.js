@@ -46,13 +46,19 @@ const app = {
             name: "Tâm",
             singer: "Mer",
             path: "./assets/music/tâm.mp3",
-            image: "./assets/img/mer.jpg",
+            image: "./assets/img/tam.jpg",
+        },
+        {
+            name: "Chiếc Ghế Trống",
+            singer: "Mer",
+            path: "./assets/music/Mer - Chiếc Ghế Trống (A song in support of UNICEF).mp3",
+            image: "./assets/img/chiecghetrong.jpg",
         },
         {
             name: "Somewhere",
             singer: "Groovyroom (Feat. Suran, pH-1)",
             path: "./assets/music/GroovyRoom (그루비룸) - 어디쯤에(Somewhere) (Feat. Suran, pH-1)(Color Coded Han-Rom-Eng Lyrics).mp3",
-            image: "./assets/img/sddefault.jpg",
+            image: "./assets/img/somewhere.jpg",
         },
         {
             name: "Lần cuối (Cover)",
@@ -73,10 +79,22 @@ const app = {
             image: "./assets/img/untilifoundyou.jpg",
         },
         {
+            name: "Rapper Thích Ka",
+            singer: "Mikelodic",
+            path: "./assets/music/(Tune #2) Rapper Thích Ka - Mikelodic.mp3",
+            image: "./assets/img/mike.jpg",
+        },
+        {
             name: "打上花火 - Uchiagehanabi",
             singer: "DAOKO ft 米津玄師",
             path: "./assets/music/DAOKO 米津玄師『打上花火』MUSIC VIDEO.mp3",
             image: "./assets/img/daoko.jpg",
+        },
+        {
+            name: "Đủ trải sẽ thấm",
+            singer: "Mikelodic x Chiennhatlang",
+            path: "./assets/music/(Tune #4) Đủ trải sẽ thấm - Mikelodic x Chiennhatlang.mp3",
+            image: "./assets/img/mike.jpg",
         },
         {
             name: "Nandemonaiya - なんでもないや",
@@ -85,10 +103,28 @@ const app = {
             image: "./assets/img/Kamishiraishi_Mone.jpg",
         },
         {
+            name: "Thần Tượng",
+            singer: "Mikelodic",
+            path: "./assets/music/(Tune #8) Thần Tượng - Mikelodic.mp3",
+            image: "./assets/img/mike.jpg",
+        },
+        {
             name: "Lần Cuối (đi bên em xót xa người ơi)",
             singer: "Ngọt",
             path: "./assets/music/Ngọt - LẦN CUỐI (đi bên em xót xa người ơi).mp3",
             image: "./assets/img/lancuoi.jpg",
+        },
+        {
+            name: "Chạng Vạng",
+            singer: "LÃNG",
+            path: "./assets/music/CHẠNG VẠNG - LÃNG.mp3",
+            image: "./assets/img/mike.jpg",
+        },
+        {
+            name: "Cung đường lẻ loi",
+            singer: "Mikelodic",
+            path: "./assets/music/Cung đường lẻ loi (Official Visual).mp3",
+            image: "./assets/img/mike.jpg",
         },
         {
             name: "Thiếu Niên K",
@@ -103,10 +139,28 @@ const app = {
             image: "./assets/img/lemon.jpg",
         },
         {
+            name: "Khúc Ca Vàng",
+            singer: "Mikelodic",
+            path: "./assets/music/Khúc Ca Vàng (feat. Mikelodic).mp3",
+            image: "./assets/img/mike.jpg",
+        },
+        {
+            name: "Ly",
+            singer: "Mike",
+            path: "./assets/music/Ly - Mike.mp3",
+            image: "./assets/img/mike.jpg",
+        },
+        {
             name: "Shinunoga E-Wa",
             singer: "Fujii Kaze",
             path: "./assets/music/Fujii Kaze - Shinunoga E-Wa (Visual).mp3",
             image: "./assets/img/Shinunoga E-Wa.jpg",
+        },
+        {
+            name: "Lời tâm sự số 3",
+            singer: "Mike",
+            path: "./assets/music/Mike - lời tâm sự số 3 (lyrics video).mp3",
+            image: "./assets/img/mike.jpg",
         },
         {
             name: "Waiting For Love",
@@ -114,6 +168,67 @@ const app = {
             path: "./assets/music/Avicii - Waiting For Love.mp3",
             image: "./assets/img/waitingforlove.jpg",
         },
+        {
+            name: "Thanh Bần",
+            singer: "Mike",
+            path: "./assets/music/Mike - Thanh Bần (Official Music Video).mp3",
+            image: "./assets/img/mike.jpg",
+        },
+        {
+            name: "nguyên xi",
+            singer: "Mike x Namlee",
+            path: "./assets/music/nguyên xi (mv 8K 18 triệu màu).mp3",
+            image: "./assets/img/nguyenxi.jpg",
+        },
+        {
+            name: "Teo Huyền Tèo",
+            singer: "NAMCOCAIN",
+            path: "./assets/music/NAMCOCAIN - TEO HUYỀN TÈO.mp3",
+            image: "./assets/img/teohuyenteo.jpg",
+        },
+        {
+            name: "Nơi Ta Sống",
+            singer: "Long Nón Lá x Mikelodic",
+            path: "./assets/music/Nơi Ta Sống (feat. Long Nón Lá, Mikelodic).mp3",
+            image: "./assets/img/mike.jpg",
+        },
+        {
+            name: "Lời Nhắn",
+            singer: "QUYẾCH (ft. SANGPUY - ERI LIAO - NHƯ KHUÊ)",
+            path: "./assets/music/QUYẾCH (ft. SANGPUY - ERI LIAO - NHƯ KHUÊ) - LỜI NHẮN.mp3",
+            image: "./assets/img/loinhan.jpg",
+        },
+        {
+            name: "Thanh Âm Da Vàng",
+            singer: "Mike",
+            path: "./assets/music/THANH ÂM DA VÀNG.mp3",
+            image: "./assets/img/mike.jpg",
+        },
+        {
+            name: "Thanh Âm Miền Núi",
+            singer: "Double2T",
+            path: "./assets/music/Thanh Âm Miền Núi - Double2T - Team B Ray - Rap Việt 2023.mp3",
+            image: "./assets/img/d2t.jpg",
+        },
+        {
+            name: "Trầu Văn Trap",
+            singer: "Lãng",
+            path: "./assets/music/Trầu Văn Trap.mp3",
+            image: "./assets/img/mike.jpg",
+        },
+        {
+            name: "NOT OK",
+            singer: "로꼬 (Loco) Feat. 민니 (여자)아이들)",
+            path: "./assets/music/로꼬 (Loco) - NOT OK (Feat. 민니 (여자)아이들)).mp3",
+            image: "./assets/img/notokay.png",
+        },
+        {
+            name: "Alone",
+            singer: "쿠기 (Coogie) Feat. 이하이 (LeeHi)",
+            path: "./assets/music/쿠기 (Coogie) - Alone (Feat. 이하이 (LeeHi)) Official MV (ENG).mp3",
+            image: "./assets/img/alone.jpg",
+        },
+
     ],
 
     render() {
