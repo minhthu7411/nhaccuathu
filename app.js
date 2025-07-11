@@ -976,7 +976,7 @@ const app = {
             name: "Sing For You",
             singer: "EXO",
             path: "./assets/music/EXO 엑소 'Sing For You' MV.mp3",
-            image: "./assets/img/.jpg",
+            image: "./assets/img/singforyou.jpg",
         },
         {
             name: "탕! (TANG!)",
