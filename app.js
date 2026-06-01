@@ -15,10 +15,8 @@ const btnPrev = $(".btn__prev");
 const btnNext = $(".btn__next");
 const btnRandom = $(".btn__shuffle");
 const btnRepeat = $(".btn__repeat");
-const btnRepeat1 = $(".btn__repeat--1");
 const btnList = $(".list-icon");
 const btnClose = $(".playlist__icon-close");
-const heartIcon = $(".favorite");
 const songCurrentTime = $(".progress-time__current");
 const songDuration = $(".progress-time__duration");
 const volumeBar = $(".volume-bar");
@@ -2271,11 +2269,6 @@ const app = {
             }
         };
 
-        // Xử lý khi bấm favorite
-        heartIcon.onclick = function () {
-            this.classList.toggle("active");
-        };
-
         // Xử lý nút volume
         volumeBtn.onclick = function () {
             _this.isMute = !_this.isMute;
@@ -2475,7 +2468,6 @@ setTimeout(() => {
 
     // Khởi động UI lần đầu
     updateUI();
-    console.log("Shuffle + Repeat đã hoạt động hoàn hảo!");
 }, 500);
 
 // BUỘC IPHONE HIỆN NÚT NEXT/PREV BÀI + SỬA LỖI NOW PLAYING TRẮNG
@@ -2628,3 +2620,99 @@ setTimeout(() => {
     audio.addEventListener('pause', updateiOSControls);
 
 }, 1000);
+
+// ==================== SLEEP TIMER ====================
+
+setTimeout(() => {
+
+    const sleepBtn = document.querySelector('.sleep-toggle');
+    const sleepMenu = document.querySelector('.sleep-menu');
+    const sleepOptions = document.querySelectorAll('.sleep-option');
+
+    if (!sleepBtn || !sleepMenu) {
+        console.log('Không tìm thấy sleep timer');
+        return;
+    }
+
+    let sleepTimer = null;
+
+    // MỞ MENU
+    sleepBtn.addEventListener('click', function(e){
+
+        e.stopPropagation();
+
+        sleepMenu.classList.toggle('show');
+    });
+
+    // CLICK OPTION
+    sleepOptions.forEach(option => {
+
+        option.addEventListener('click', function(){
+
+            const minutes = Number(this.dataset.time);
+
+            // Xóa timer cũ
+            clearTimeout(sleepTimer);
+
+            // OFF
+            if(minutes === 0){
+
+                sleepBtn.innerHTML =
+                    `<i class="fa-regular fa-clock"></i>`;
+
+                sleepBtn.classList.remove('active');
+
+                sleepMenu.classList.remove('show');
+
+                console.log('Đã tắt hẹn giờ');
+
+                return;
+            }
+
+            // TIMER
+            sleepTimer = window.addEventListener('DOMContentLoaded', () => {
+
+                audio.pause();
+
+                sleepBtn.innerHTML =
+                    `<i class="fa-regular fa-clock"></i>`;
+
+                sleepBtn.classList.remove('active');
+
+                console.log('Sleep timer finished');
+
+            }, minutes * 60 * 1000);
+
+            // Đổi icon đậm
+            sleepBtn.innerHTML =
+                `<i class="fa-solid fa-clock"></i>`;
+
+            sleepBtn.classList.add('active');
+
+            // Ẩn menu
+            sleepMenu.classList.remove('show');
+
+            console.log(`Sleep ${minutes} phút`);
+        });
+    });
+
+    // CLICK NGOÀI → ĐÓNG MENU
+    document.addEventListener('click', function(e){
+
+        if(!e.target.closest('.sleep-wrapper')){
+            sleepMenu.classList.remove('show');
+        }
+
+    });
+
+    sleepOptions.forEach(btn => {
+        btn.addEventListener('click', () => {
+            // Xóa selected cũ
+            document.querySelectorAll('.sleep-option')
+                .forEach(item => item.classList.remove('selected'));
+            // Thêm selected mới
+            btn.classList.add('selected');
+        });
+    });
+});
+

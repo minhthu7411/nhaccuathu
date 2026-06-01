@@ -397,31 +397,104 @@ body {
     padding-top: 8px;
 }
 
-.favorite {
+.sleep-wrapper{
+    position:relative;
+    align-items:center;
+    padding-right: 25px;
+}
+
+.sleep-toggle{
     font-size: 3rem;
-    cursor: pointer;
+    border:none;
+    background:none;
+    cursor:pointer;
+    color: #3a2222;
 }
 
-.favorite:hover {
+/* 2 icon chồng lên nhau */
+.sleep-toggle i{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    transition:.2s;
+}
+
+/* Mặc định hiện regular */
+.sleep-toggle .fa-regular{
+    opacity:1;
+}
+
+/* Mặc định ẩn solid */
+.sleep-toggle .fa-solid{
+    opacity:0;
+}
+
+/* Khi active */
+.sleep-toggle.active .fa-regular{
+    opacity:0;
+}
+
+.sleep-toggle.active .fa-solid{
+    opacity:1;
+}
+
+.sleep-menu {
+    position:absolute;
+    top:37px;
+    right:0;
+    width:170px;
+    background:#202020;
+    border-radius:14px;
+    padding:8px;
+    display:none;
+    flex-direction:column;
+    gap:6px;
+    z-index:99999;
+    box-shadow:0 10px 30px rgba(0,0,0,.4);
+}
+
+.sleep-menu.show {
+    display:flex;
+}
+
+.sleep-option{
+    border:none;
+    background:none;
+    color:#f5f5f5;
+    padding:14px 16px;
+    border-radius:12px;
+    text-align:left;
+    cursor:pointer;
+    font-size:15px;
+    font-weight:500;
+    transition:all .2s ease;
+}
+
+.sleep-option:hover{
+    background:rgba(255,255,255,.08);
+}
+
+.sleep-option:active{
+    transform:scale(.98);
+}
+
+.sleep-option.cancel{
+    color:#ff6b6b;
+}
+
+.sleep-option.cancel:hover{
+    background:rgba(255,107,107,.1);
+    color:#ff8787;
+}
+
+.sleep-option.selected{
+    background:rgba(29,185,84,.15);
+    background: linear-gradient(to bottom, rgba(255,255,255,0.15) 0%, rgba(0,0,0,0.15) 100%), radial-gradient(at top center, rgba(19, 17, 17, 0.4) 0%, rgba(39, 39, 39, 0.4) 120%) #57515175;
+}
+
+.sleep-toggle:hover {
     opacity: 0.8;
-}
-
-.heart-icon-red {
-    display: none;
-    cursor: pointer;
-}
-
-.heart-icon-red:hover {
-    opacity: 0.8;
-}
-
-.favorite.active .heart-icon {
-    display: none;
-}
-
-.favorite.active .heart-icon-red {
-    display: block;
-    color: rgb(181, 16, 16);
 }
 
 /* CD - Song - Singer */

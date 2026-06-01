@@ -40,10 +40,30 @@
 
                 <span class="title"> Now playing: </span>
 
-                <span class="favorite">
-                    <i class="fa-regular fa-heart heart-icon"></i>
-                    <i class="fa-solid fa-heart heart-icon-red"></i>
-                </span>
+                <div class="sleep-wrapper">
+                    <button class="sleep-toggle">
+                        <i class="fa-regular fa-clock"></i>
+                        <i class="fa-solid fa-clock"></i>
+                    </button>
+
+                    <div class="sleep-menu">
+                        <button class="sleep-option" data-time="30">
+                            30 phút
+                        </button>
+
+                        <button class="sleep-option" data-time="60">
+                            1 giờ
+                        </button>
+
+                        <button class="sleep-option" data-time="120">
+                            2 giờ
+                        </button>
+
+                        <button class="sleep-option cancel" data-time="0">
+                            Tắt hẹn giờ
+                        </button>
+                    </div>
+                </div>
             </header>
 
             <!-- Music Card -->
