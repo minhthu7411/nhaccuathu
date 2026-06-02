@@ -2470,166 +2470,22 @@ setTimeout(() => {
     updateUI();
 }, 500);
 
-// BUỘC IPHONE HIỆN NÚT NEXT/PREV BÀI + SỬA LỖI NOW PLAYING TRẮNG
-setTimeout(() => {
-    const audio = document.getElementById('audio');
-
-    if (!audio) return;
-
-    // === 1. CẬP NHẬT MEDIA SESSION CHO IPHONE (hiện nút Next/Prev thay vì ±10s)
-    function updateiOSControls() {
-        if ('mediaSession' in navigator) {
-
-            const song = app.songs[app.currentIndex];
-
-            navigator.mediaSession.metadata = new MediaMetadata({
-                title: song?.name || 'Đang phát',
-                artist: song?.singer || 'Music Player',
-                album: 'My Playlist',
-                artwork: [
-                    {
-                        src: song?.image || 'img/default.jpg',
-                        sizes: '512x512',
-                        type: 'image/jpeg'
-                    },
-                    {
-                        src: song?.image || 'img/default.jpg',
-                        sizes: '192x192',
-                        type: 'image/jpeg'
-                    }
-                ]
-            });
-
-            // iPhone + Android đều cần
-            navigator.mediaSession.playbackState =
-                audio.paused ? 'paused' : 'playing';
-
-            // Android cần position state để hiện đúng next/prev
-            if ('setPositionState' in navigator.mediaSession && audio.duration) {
-                navigator.mediaSession.setPositionState({
-                    duration: audio.duration,
-                    playbackRate: audio.playbackRate,
-                    position: audio.currentTime
-                });
-            }
-
-            // PLAY
-            navigator.mediaSession.setActionHandler('play', async () => {
-                await audio.play();
-            });
-
-            // PAUSE
-            navigator.mediaSession.setActionHandler('pause', () => {
-                audio.pause();
-            });
-
-            // NEXT
-            navigator.mediaSession.setActionHandler('nexttrack', () => {
-                app.nextSong();
-                audio.play();
-            });
-
-            // PREV
-            navigator.mediaSession.setActionHandler('previoustrack', () => {
-                app.prevSong();
-                audio.play();
-            });
-
-            // Ép Android bỏ nút tua 10s
-            try {
-                navigator.mediaSession.setActionHandler('seekforward', null);
-                navigator.mediaSession.setActionHandler('seekbackward', null);
-            } catch (e) {}
-        }
-    }
-
-    audio.addEventListener('play', updateiOSControls);
-    audio.addEventListener('pause', updateiOSControls);
-
-    audio.addEventListener('timeupdate', () => {
-    if (
-        'mediaSession' in navigator &&
-        'setPositionState' in navigator.mediaSession &&
-        audio.duration
-    ) {
-        navigator.mediaSession.setPositionState({
-            duration: audio.duration,
-            playbackRate: audio.playbackRate,
-            position: audio.currentTime
-        });
-    }
-    });
-
-    // === 2. SỬA LỖI NOW PLAYING BỊ TRẮNG KHI CHUYỂN TAB
-    function updateNowPlayingScreen() {
-        const thumb = document.querySelector('.now-playing-thumb, .cd-thumb');
-        const title = document.querySelector('.now-playing-info h3, .song-name');
-        const singer = document.querySelector('.now-playing-info p, .song-singer');
-
-        const song = app.songs[app.currentIndex];
-        if (!song) return;
-
-        if (thumb) {
-            thumb.src = song.image || 'img/default.jpg';
-            thumb.style.opacity = '1';
-        }
-        if (title) title.textContent = song.name;
-        if (singer) singer.textContent = song.singer;
-    }
-
-    // Gắn lại các hàm gốc để override
-    const origNext = app.nextSong;
-    const origPrev = app.prevSong;
-    const origLoad = app.loadCurrentSong;
-
-    app.nextSong = function() {
-        origNext.call(this);
-        setTimeout(() => {
-            updateiOSControls();
-            updateNowPlayingScreen();
-    }, 100);
-    };
-
-    app.prevSong = function() {
-        origPrev.call(this);
-        setTimeout(() => {
-            updateiOSControls();
-            updateNowPlayingScreen();
-    }, 100);
-    };
-
-    // ĐÃ SỬA DÒNG LỖI "load keelCurrentSong" → thành đúng cú pháp
-    app.loadCurrentSong = function() {
-        origLoad.call(this);
-        setTimeout(() => {
-            updateiOSControls();
-            updateNowPlayingScreen();
-        }, 200);
-    };
-
-    // Khi mở tab Now Playing → tự động cập nhật
-    document.querySelectorAll('.now-playing, .tab-item').forEach(el => {
-        observer.observe(el, { attributes: true, attributeFilter: ['class'] });
-    });
-
-    // Lần đầu load
-    updateiOSControls();
-    updateNowPlayingScreen();
-
-    audio.addEventListener('play', updateiOSControls);
-    audio.addEventListener('pause', updateiOSControls);
-
-}, 1000);
-
 // ==================== SLEEP TIMER ====================
 
 setTimeout(() => {
 
-    const sleepBtn = document.querySelector('.sleep-toggle');
+    const sleepWrapper = document.querySelector('.sleep-wrapper');
+    const regularBtn = document.querySelector('.regular-btn');
+    const solidBtn = document.querySelector('.solid-btn');
     const sleepMenu = document.querySelector('.sleep-menu');
     const sleepOptions = document.querySelectorAll('.sleep-option');
 
-    if (!sleepBtn || !sleepMenu) {
+    if (
+        !sleepWrapper ||
+        !regularBtn ||
+        !solidBtn ||
+        !sleepMenu
+    ) {
         console.log('Không tìm thấy sleep timer');
         return;
     }
@@ -2637,82 +2493,298 @@ setTimeout(() => {
     let sleepTimer = null;
 
     // MỞ MENU
-    sleepBtn.addEventListener('click', function(e){
-
+    function openMenu(e) {
         e.stopPropagation();
-
         sleepMenu.classList.toggle('show');
+    }
+
+    regularBtn.addEventListener('click', openMenu);
+    solidBtn.addEventListener('click', openMenu);
+
+    // CLICK NGOÀI → ĐÓNG
+
+    document.addEventListener('click', (e) => {
+        if (!e.target.closest('.sleep-wrapper')) {
+            sleepMenu.classList.remove('show');
+        }
     });
 
-    // CLICK OPTION
-    sleepOptions.forEach(option => {
+    // CHỌN THỜI GIAN
+    sleepOptions.forEach(btn => {
 
-        option.addEventListener('click', function(){
-
-            const minutes = Number(this.dataset.time);
+        btn.addEventListener('click', () => {
+            const minutes = Number(btn.dataset.time);
 
             // Xóa timer cũ
             clearTimeout(sleepTimer);
 
-            // OFF
-            if(minutes === 0){
-
-                sleepBtn.innerHTML =
-                    `<i class="fa-regular fa-clock"></i>`;
-
-                sleepBtn.classList.remove('active');
-
-                sleepMenu.classList.remove('show');
-
-                console.log('Đã tắt hẹn giờ');
-
-                return;
-            }
-
-            // TIMER
-            sleepTimer = window.addEventListener('DOMContentLoaded', () => {
-
-                audio.pause();
-
-                sleepBtn.innerHTML =
-                    `<i class="fa-regular fa-clock"></i>`;
-
-                sleepBtn.classList.remove('active');
-
-                console.log('Sleep timer finished');
-
-            }, minutes * 60 * 1000);
-
-            // Đổi icon đậm
-            sleepBtn.innerHTML =
-                `<i class="fa-solid fa-clock"></i>`;
-
-            sleepBtn.classList.add('active');
-
-            // Ẩn menu
-            sleepMenu.classList.remove('show');
-
-            console.log(`Sleep ${minutes} phút`);
-        });
-    });
-
-    // CLICK NGOÀI → ĐÓNG MENU
-    document.addEventListener('click', function(e){
-
-        if(!e.target.closest('.sleep-wrapper')){
-            sleepMenu.classList.remove('show');
-        }
-
-    });
-
-    sleepOptions.forEach(btn => {
-        btn.addEventListener('click', () => {
             // Xóa selected cũ
             document.querySelectorAll('.sleep-option')
                 .forEach(item => item.classList.remove('selected'));
-            // Thêm selected mới
+
+            // TẮT HẸN GIỜ
+
+            if (minutes === 0) {
+
+                sleepTimer = null;
+
+                // Đổi về regular
+                sleepWrapper.classList.remove('sleep-active');
+
+                // Ẩn menu
+                sleepMenu.classList.remove('show');
+                console.log('Đã tắt hẹn giờ');
+                return;
+            }
+
+            // Highlight option
             btn.classList.add('selected');
+
+            // Đổi sang solid
+            sleepWrapper.classList.add('sleep-active');
+
+            // TIMER
+            sleepTimer = setTimeout(() => {
+
+                // Dừng nhạc
+                audio.pause();
+
+                // Reset timer
+                sleepTimer = null;
+
+                // Đổi icon về regular
+                sleepWrapper.classList.remove('sleep-active');
+
+                // Xóa selected
+                document.querySelectorAll('.sleep-option')
+                    .forEach(item => item.classList.remove('selected'));
+
+                // Đóng menu
+                sleepMenu.classList.remove('show');
+                console.log('Sleep timer finished');
+            }, minutes * 60 * 1000);
+
+            // Ẩn menu
+            sleepMenu.classList.remove('show');
+            console.log(`Sleep timer: ${minutes} phút`);
         });
     });
-});
+}, 500);
 
+// ==================== MEDIA SESSION + NOW PLAYING FIX ====================
+window.addEventListener('DOMContentLoaded', () => {
+    const audio = document.getElementById('audio');
+
+    if (!audio) return;
+
+    // MEDIA SESSION
+    function updateMediaSession() {
+        if (!('mediaSession' in navigator)) return;
+        const song = app.songs[app.currentIndex];
+        if (!song) return;
+
+        // Metadata
+        navigator.mediaSession.metadata = new MediaMetadata({
+            title: song.name || 'Đang phát',
+            artist: song.singer || 'Music Player',
+            album: 'My Playlist',
+
+            artwork: [
+                {
+                    src: song.image || 'img/default.jpg',
+                    sizes: '96x96',
+                    type: 'image/jpeg'
+                },
+                {
+                    src: song.image || 'img/default.jpg',
+                    sizes: '192x192',
+                    type: 'image/jpeg'
+                },
+                {
+                    src: song.image || 'img/default.jpg',
+                    sizes: '512x512',
+                    type: 'image/jpeg'
+                }
+            ]
+        });
+
+        // QUAN TRỌNG CHO ANDROID
+
+        navigator.mediaSession.playbackState =
+            audio.paused ? 'paused' : 'playing';
+
+        // POSITION STATE
+        if (
+            'setPositionState' in navigator.mediaSession &&
+            audio.duration
+        ) {
+            try {
+                navigator.mediaSession.setPositionState({
+                    duration: audio.duration,
+                    playbackRate: audio.playbackRate,
+                    position: audio.currentTime
+                });
+            } catch (e) {}
+        }
+
+        // ACTION HANDLERS
+
+        navigator.mediaSession.setActionHandler('play', async () => {
+            await audio.play();
+        });
+
+        navigator.mediaSession.setActionHandler('pause', () => {
+            audio.pause();
+        });
+
+        navigator.mediaSession.setActionHandler('nexttrack', async () => {
+            if (app.isRandom) {
+                app.randomSong();
+            } else {
+                app.nextSong();
+            }
+            await audio.play();
+            updateMediaSession();
+            updateNowPlayingScreen();
+        });
+
+        navigator.mediaSession.setActionHandler('previoustrack', async () => {
+            if (app.isRandom) {
+                app.randomSong();
+            } else {
+                app.prevSong();
+            }
+            await audio.play();
+            updateMediaSession();
+            updateNowPlayingScreen();
+        });
+
+        // BỎ NÚT ±10s
+        try {
+            navigator.mediaSession.setActionHandler(
+                'seekforward',
+                null
+            );
+            navigator.mediaSession.setActionHandler(
+                'seekbackward',
+                null
+            );
+        } catch (e) {}
+    }
+
+    // NOW PLAYING
+    function updateNowPlayingScreen() {
+        const song = app.songs[app.currentIndex];
+        if (!song) return;
+
+        // Thumb
+        document.querySelectorAll(
+            '.now-playing-thumb, .cd-thumb, .now-playing img'
+        ).forEach(img => {
+            img.src = song.image || 'img/default.jpg';
+            img.style.opacity = '1';
+        });
+
+        // Title
+        document.querySelectorAll(
+            '.now-playing-info h3, .song-name'
+        ).forEach(el => {
+            el.textContent = song.name;
+        });
+
+        // Singer
+        document.querySelectorAll(
+            '.now-playing-info p, .song-singer'
+        ).forEach(el => {
+            el.textContent = song.singer;
+        });
+
+    }
+
+    // UPDATE REALTIME
+    audio.addEventListener('play', () => {
+        updateMediaSession();
+    });
+
+    audio.addEventListener('pause', () => {
+        updateMediaSession();
+    });
+
+    audio.addEventListener('loadedmetadata', () => {
+        updateMediaSession();
+    });
+
+    audio.addEventListener('timeupdate', () => {
+        if (
+            'mediaSession' in navigator &&
+            'setPositionState' in navigator.mediaSession &&
+            audio.duration
+        ) {
+            try {
+
+                navigator.mediaSession.setPositionState({
+                    duration: audio.duration,
+                    playbackRate: audio.playbackRate,
+                    position: audio.currentTime
+                });
+            } catch (e) {}
+        }
+    });
+
+    // OVERRIDE APP FUNCTIONS
+    const originalNextSong = app.nextSong;
+    const originalPrevSong = app.prevSong;
+    const originalLoadSong = app.loadCurrentSong;
+
+    // NEXT
+    app.nextSong = function () {
+        originalNextSong.call(this);
+        setTimeout(() => {
+            updateMediaSession();
+            updateNowPlayingScreen();
+        }, 100);
+    };
+
+    // PREV
+    app.prevSong = function () {
+        originalPrevSong.call(this);
+        setTimeout(() => {
+            updateMediaSession();
+            updateNowPlayingScreen();
+        }, 100);
+
+    };
+
+    // LOAD SONG
+    app.loadCurrentSong = function () {
+        originalLoadSong.call(this);
+        setTimeout(() => {
+            updateMediaSession();
+            updateNowPlayingScreen();
+        }, 200);
+    };
+
+    // OBSERVER FIX
+    const observer = new MutationObserver(() => {
+        if (
+            document.querySelector(
+                '.now-playing.active, .now-playing.show'
+            )
+        ) {
+            updateNowPlayingScreen();
+        }
+    });
+
+    document.querySelectorAll(
+        '.now-playing, .tab-item'
+    ).forEach(el => {
+        observer.observe(el, {
+            attributes: true,
+            attributeFilter: ['class']
+        });
+    });
+
+    // INIT
+    updateMediaSession();
+    updateNowPlayingScreen();
+});
