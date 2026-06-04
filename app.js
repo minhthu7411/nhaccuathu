@@ -1405,7 +1405,7 @@ const app = {
         {
             name: "Sâu trong em (Disco remix)",
             singer: "Bích Phương (ft. Bigdaddy)",
-            path: "./assets/music/Sâu trong em - Bích Phương (Disco remix).mp3",
+            path: "./assets/music/Sâu trong em (Disco remix) - Bích Phương.mp3",
             image: "./assets/img/sautrongemdiscoremix.jpg",
         },
         {
@@ -1979,6 +1979,18 @@ const app = {
             singer: "JGKiD , Đen, EmceeL, KraziNoyze, DSK",
             path: "./assets/music/Tan ka ka a k a Ganja - JGKiD , Đen, EmceeL, KraziNoyze, DSK.mp3",
             image: "./assets/img/tankaaaaaa.jpg",
+        },
+        {
+            name: "MỘT NGÀY CỦA BỐ",
+            singer: "JokeD x BlackT x LilShadow x DLBlack",
+            path: "./assets/music/MỘT NGÀY CỦA BỐ - JokeD x BlackT x LilShadow x DLBlack.mp3",
+            image: "./assets/img/motngaycuabo.jpg",
+        },
+        {
+            name: "Một Thuở Thanh Bình",
+            singer: "TeA ft. Tuyết & VoVanDuc",
+            path: "./assets/music/Một Thuở Thanh Bình - TeA ft. Tuyết & VoVanDuc.mp3",
+            image: "./assets/img/mothuothanhbinh.jpg",
         },
         {
             name: "Tám Chữ Có",
