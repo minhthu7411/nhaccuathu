@@ -89,22 +89,10 @@ const app = {
             image: "./assets/img/rapperthichka.jpg",
         },
         {
-            name: "打上花火 - Uchiagehanabi",
-            singer: "DAOKO ft 米津玄師",
-            path: "./assets/music/米津玄師『打上花火』 - DAOKO.mp3",
-            image: "./assets/img/daoko.jpg",
-        },
-        {
             name: "Đủ trải sẽ thấm",
             singer: "Mikelodic x Chiennhatlang",
             path: "./assets/music/Đủ trải sẽ thấm - Mikelodic x Chiennhatlang.mp3",
             image: "./assets/img/tune04.jpg",
-        },
-        {
-            name: "Nandemonaiya - なんでもないや",
-            singer: "Mone Kamshiraishi",
-            path: "./assets/music/Nandemonaiya (なんでもないや) - Mone Kamshiraishi.mp3",
-            image: "./assets/img/Kamishiraishi_Mone.jpg",
         },
         {
             name: "Thần Tượng",
@@ -149,12 +137,6 @@ const app = {
             image: "./assets/img/thieunienk.jpg",
         },
         {
-            name: "Lemon",
-            singer: "Kenshi Yonezu",
-            path: "./assets/music/Lemon - Kenshi Yonezu 米津玄師.mp3",
-            image: "./assets/img/lemon.jpg",
-        },
-        {
             name: "Khúc Ca Vàng",
             singer: "Mikelodic",
             path: "./assets/music/Khúc Ca Vàng- Mikelodic.mp3",
@@ -171,12 +153,6 @@ const app = {
             singer: "Mike",
             path: "./assets/music/Ly - Mike.mp3",
             image: "./assets/img/ly.png",
-        },
-        {
-            name: "Shinunoga E-Wa",
-            singer: "Fujii Kaze",
-            path: "./assets/music/Shinunoga E Wa - Fujii Kaze.mp3",
-            image: "./assets/img/Shinunoga E-Wa.jpg",
         },
         {
             name: "Lời tâm sự số 3",
@@ -359,12 +335,6 @@ const app = {
             image: "./assets/img/emkhongdidau.jpg",
         },
         {
-            name: "Michi Teyu Ku (Overflowing)",
-            singer: "Fujii Kaze",
-            path: "./assets/music/Michi Teyu Ku (Overflowing) - Fujii Kaze.mp3",
-            image: "./assets/img/michiteyuku.jpg",
-        },
-        {
             name: "Hẹn em mai sau gặp lại",
             singer: "Emcee L ft. Lamoon",
             path: "./assets/music/Hẹn em mai sau gặp lại - Emcee L ft. Lamoon.mp3",
@@ -491,12 +461,6 @@ const app = {
             image: "./assets/img/querry.jpg",
         },
         {
-            name: "すずめ",
-            singer: "RADWIMPS feat.十明",
-            path: "./assets/music/すずめ - RADWIMPS feat.十明.mp3",
-            image: "./assets/img/すずめ.jpg",
-        },
-        {
             name: "Mơ Làm Ma",
             singer: "Ngọt (ft. Thỏ Trauma)",
             path: "./assets/music/Mo Lam Ma - Ngọt (ft. Thỏ Trauma).mp3",
@@ -599,12 +563,6 @@ const app = {
             image: "./assets/img/thesong.jpg",
         },
         {
-            name: "ロクデナシ愛が灯る",
-            singer: "Rokudenashi",
-            path: "./assets/music/ロクデナシ愛が灯る - Rokudenashi.mp3",
-            image: "./assets/img/ロクデナシ愛が灯る.jpg",
-        },
-        {
             name: "주지마",
             singer: "로꼬 (Loco), 화사 (마마무)",
             path: "./assets/music/화사 (마마무) - 로꼬 (Loco) 주지마.mp3",
@@ -627,12 +585,6 @@ const app = {
             singer: "YOASOBI",
             path: "./assets/music/Yoru ni Kakeru「夜に駆ける」 - YOASOBI.mp3",
             image: "./assets/img/intothenight.jpg",
-        },
-        {
-            name: "群青",
-            singer: "YOASOBI",
-            path: "./assets/music/群青 (THE FIRST TAKE) - YOASOBI.mp3",
-            image: "./assets/img/群青.jpg",
         },
         {
             name: "AI MỚI LÀ KẺ XẤU XA",
@@ -1061,12 +1013,6 @@ const app = {
             image: "./assets/img/Backstreetboys.jpg",
         },
         {
-            name: "Inochi no Namae",
-            singer: "Spirited Away",
-            path: "./assets/music/Inochi no Namae - Spirited Away.mp3",
-            image: "./assets/img/SpiritedAway.jpg",
-        },
-        {
             name: "Ngày Lang Thang",
             singer: "Đen ft. JGKiD ft. Dr.Quang",
             path: "./assets/music/Ngày Lang Thang - Đen ft. JGKiD ft. Dr.Quang.mp3",
@@ -1415,18 +1361,6 @@ const app = {
             image: "./assets/img/henlansau.jpg",
         },
         {
-            name: "高嶺のなでしこ - THE FIRST TAKE",
-            singer: "HoneyWorks - 可愛くてごめん feat. CHiCO, mona, ハコニワリリィ, 可憐なアイボリー",
-            path: "./assets/music/HoneyWorks (THE FIRST TAKE) - 可愛くてごめん feat. CHiCO, mona, ハコニワリリィ, 可憐なアイボリー, 高嶺のなでしこ.mp3",
-            image: "./assets/img/kawaiigomei.jpg",
-        },
-        {
-            name: "Wind - THE FIRST TAKE",
-            singer: "Akeboshi",
-            path: "./assets/music/Wind - Akeboshi (THE FIRST TAKE).mp3",
-            image: "./assets/img/windtft.jpg",
-        },
-        {
             name: "Không Sao Mà, Em Đây Rồi (với Thắng)",
             singer: "Suni ft. Thắng",
             path: "./assets/music/Không Sao Mà, Em Đây Rồi - SUNI (với Thắng).mp3",
@@ -1463,16 +1397,16 @@ const app = {
             image: "./assets/img/saodoingoi.jpg",
         },
         {
-            name: "Hello Vietnam - Beo Dat May Troi at Suntory Hall",
-            singer: "Suntory Hall",
-            path: "./assets/music/Hello Vietnam, Beo Dat May Troi at Suntory Hall - Dàn nhạc giao hưởng Hà Nội.mp3",
-            image: "./assets/img/hellovietnambeodatmaytroi.jpg",
-        },
-        {
             name: "Đi Về Nhà",
             singer: "Đen x JustaTee",
             path: "./assets/music/Đi Về Nhà - Đen x JustaTee.mp3",
             image: "./assets/img/divenha.jpg",
+        },
+        {
+            name: "Hello Vietnam - Beo Dat May Troi at Suntory Hall",
+            singer: "Suntory Hall",
+            path: "./assets/music/Hello Vietnam, Beo Dat May Troi at Suntory Hall - Dàn nhạc giao hưởng Hà Nội.mp3",
+            image: "./assets/img/hellovietnambeodatmaytroi.jpg",
         },
         {
             name: "Ai Ngoài Anh",
@@ -1649,18 +1583,6 @@ const app = {
             image: "./assets/img/sbtiutk.jpg",
         },
         {
-            name: "Grand Escape - A Weathering With You",
-            singer: "Toko Miura",
-            path: "./assets/music/Grand Escape (A Weathering With You) - RADWIMPS.mp3",
-            image: "./assets/img/grandesscape.jpg",
-        },
-        {
-            name: "Is There Still Anything That Love Can Do",
-            singer: "Radwimps",
-            path: "./assets/music/Is There Still Anything That Love Can Do - RADWIMPS.mp3",
-            image: "./assets/img/itsattlcd.jpg",
-        },
-        {
             name: "Love Yourself",
             singer: "Justin Bieber",
             path: "./assets/music/Love Yourself - Justin Bieber.mp3",
@@ -1685,42 +1607,10 @@ const app = {
             image: "./assets/img/xlayemv.jpg",
         },
         {
-            name: "スパークル - Your name",
-            singer: "Radwimps",
-            path: "./assets/music/Your name - スパークル.mp3",
-            image: "./assets/img/yournameabc.jpg",
-        },
-        
-        {
             name: "Va Va Voom",
             singer: "Nicki Minaj",
             path: "./assets/music/Va Va Voom - Nicki Minaj.mp3",
             image: "./assets/img/vavavoom.jpg",
-        },
-        {
-            name: "Gaze",
-            singer: "Rokudenashi",
-            path: "./assets/music/Gaze - Rokudenashi.mp3",
-            image: "./assets/img/Gaze.jpg",
-        },
-        
-        {
-            name: "One Voice",
-            singer: "Rokudenashi",
-            path: "./assets/music/One Voice - Rokudenashi.mp3",
-            image: "./assets/img/onevoice.jpg",
-        },
-        {
-            name: "Spica",
-            singer: "Rokudenashi",
-            path: "./assets/music/Spica - Rokudenashi.mp3",
-            image: "./assets/img/spica.jpg",
-        },
-        {
-            name: "ロクテナシ言葉の続き - Words to Follow",
-            singer: "Rokudenashi",
-            path: "./assets/music/ロクテナシ言葉の続き Words to Follow - Rokudenashi.mp3",
-            image: "./assets/img/wordstofollow.png",
         },
         {
             name: "Anh Đánh Rơi Người Yêu Này",
@@ -1991,6 +1881,180 @@ const app = {
             singer: "TeA ft. Tuyết & VoVanDuc",
             path: "./assets/music/Một Thuở Thanh Bình - TeA ft. Tuyết & VoVanDuc.mp3",
             image: "./assets/img/mothuothanhbinh.jpg",
+        },
+        {
+            name: "Nandemonaiya - なんでもないや",
+            singer: "Mone Kamshiraishi",
+            path: "./assets/music/Nandemonaiya (なんでもないや) - Mone Kamshiraishi.mp3",
+            image: "./assets/img/Kamishiraishi_Mone.jpg",
+        },
+        {
+            name: "スパークル - Your name",
+            singer: "Radwimps",
+            path: "./assets/music/Your name - スパークル.mp3",
+            image: "./assets/img/yournameabc.jpg",
+        },
+        {
+            name: "Theme of Mitsuha",
+            singer: "Your Name",
+            path: "./assets/music/Theme of Mitsuha.mp3",
+            image: "./assets/img/Mitsuha.jpg",
+        },
+        {
+            name: "Nandemonaiya - Kamishiraishi Mone (Maxone Remix)",
+            singer: "Kamishiraishi Mone",
+            path: "./assets/music/Nandemonaiya - Kamishiraishi Mone (Maxone Remix).mp3",
+            image: "./assets/img/nandemoremix.jpg",
+        },
+        {
+            name: "Grand Escape - A Weathering With You",
+            singer: "Toko Miura",
+            path: "./assets/music/Grand Escape (A Weathering With You) - RADWIMPS.mp3",
+            image: "./assets/img/grandesscape.jpg",
+        },
+        {
+            name: "Is There Still Anything That Love Can Do",
+            singer: "Radwimps",
+            path: "./assets/music/Is There Still Anything That Love Can Do - RADWIMPS.mp3",
+            image: "./assets/img/itsattlcd.jpg",
+        },
+        {
+            name: "すずめ",
+            singer: "RADWIMPS feat.十明 (Toaka)",
+            path: "./assets/music/すずめ - RADWIMPS feat.十明.mp3",
+            image: "./assets/img/すずめ.jpg",
+        },
+        {
+            name: "Rain",
+            singer: "Hata Motohiro",
+            path: "./assets/music/Rain - Hata Motohiro.mp3",
+            image: "./assets/img/rainhata.jpg",
+        },
+        {
+            name: "Sakura Anata ni Deaete Yokatta",
+            singer: "5 centimet per second",
+            path: "./assets/music/Sakura Anata ni Deaete Yokatta - 5 centimet per second.mp3",
+            image: "./assets/img/5cms.jpg",
+        },
+        {
+            name: "One More Time,One More Chance",
+            singer: "Masayoshi Zamayaki",
+            path: "./assets/music/One More Time,One More Chance - Masayoshi Zamayaki.mp3",
+            image: "./assets/img/5cmsss.jpg",
+        },
+        {
+            name: "Kiki's Delivery Service",
+            singer: " Umi No Mieru Machi Piano",
+            path: "./assets/music/Kiki's Delivery Service - Umi No Mieru Machi Piano.mp3",
+            image: "./assets/img/kikidelivery.jpg",
+        },
+        {
+            name: "Merry-Go-Round of Life",
+            singer: "Howl's Moving Castle",
+            path: "./assets/music/Merry-Go-Round of Life (from 'Howl's Moving Castle').mp3",
+            image: "./assets/img/howlmovingcastle.jpg",
+        },
+        {
+            name: "The Name Of Life",
+            singer: "Spirited Away (Piano)",
+            path: "./assets/music/The Name Of Life - Spirited Away (Piano).mp3",
+            image: "./assets/img/thenameoflife.jpg",
+        },
+        {
+            name: "Summer of Farewells",
+            singer: "From Up On Poppy Hill",
+            path: "./assets/music/Summer of Farewells - From Up On Poppy Hill.mp3",
+            image: "./assets/img/fromuponpoppyhill.jpg",
+        },
+        {
+            name: "River Flows in You",
+            singer: "Yiruma, (이루마)",
+            path: "./assets/music/River Flows in You - Yiruma, (이루마).mp3",
+            image: "./assets/img/riverflowsinyou.jpg",
+        },
+        {
+            name: "Inochi no Namae",
+            singer: "Spirited Away",
+            path: "./assets/music/Inochi no Namae - Spirited Away.mp3",
+            image: "./assets/img/SpiritedAway.jpg",
+        },
+        {
+            name: "ロクデナシ愛が灯る",
+            singer: "Rokudenashi",
+            path: "./assets/music/ロクデナシ愛が灯る - Rokudenashi.mp3",
+            image: "./assets/img/ロクデナシ愛が灯る.jpg",
+        },
+        {
+            name: "Gaze",
+            singer: "Rokudenashi",
+            path: "./assets/music/Gaze - Rokudenashi.mp3",
+            image: "./assets/img/Gaze.jpg",
+        },
+        {
+            name: "One Voice",
+            singer: "Rokudenashi",
+            path: "./assets/music/One Voice - Rokudenashi.mp3",
+            image: "./assets/img/onevoice.jpg",
+        },
+        {
+            name: "Ambiguous",
+            singer: "Rokudenashi",
+            path: "./assets/music/Ambiguous - Rokudenashi.mp3",
+            image: "./assets/img/Ambiguous.jpg",
+        },
+        {
+            name: "Spica",
+            singer: "Rokudenashi",
+            path: "./assets/music/Spica - Rokudenashi.mp3",
+            image: "./assets/img/spica.jpg",
+        },
+        {
+            name: "ロクテナシ言葉の続き - Words to Follow",
+            singer: "Rokudenashi",
+            path: "./assets/music/ロクテナシ言葉の続き Words to Follow - Rokudenashi.mp3",
+            image: "./assets/img/wordstofollow.png",
+        },
+        {
+            name: "打上花火 - Uchiagehanabi",
+            singer: "DAOKO ft 米津玄師",
+            path: "./assets/music/米津玄師『打上花火』 - DAOKO.mp3",
+            image: "./assets/img/daoko.jpg",
+        },
+        {
+            name: "Lemon",
+            singer: "Kenshi Yonezu",
+            path: "./assets/music/Lemon - Kenshi Yonezu 米津玄師.mp3",
+            image: "./assets/img/lemon.jpg",
+        },
+        {
+            name: "Shinunoga E-Wa",
+            singer: "Fujii Kaze",
+            path: "./assets/music/Shinunoga E Wa - Fujii Kaze.mp3",
+            image: "./assets/img/Shinunoga E-Wa.jpg",
+        },
+        {
+            name: "Michi Teyu Ku (Overflowing)",
+            singer: "Fujii Kaze",
+            path: "./assets/music/Michi Teyu Ku (Overflowing) - Fujii Kaze.mp3",
+            image: "./assets/img/michiteyuku.jpg",
+        },
+        {
+            name: "群青",
+            singer: "YOASOBI",
+            path: "./assets/music/群青 (THE FIRST TAKE) - YOASOBI.mp3",
+            image: "./assets/img/群青.jpg",
+        },
+        {
+            name: "高嶺のなでしこ - THE FIRST TAKE",
+            singer: "HoneyWorks - 可愛くてごめん feat. CHiCO, mona, ハコニワリリィ, 可憐なアイボリー",
+            path: "./assets/music/HoneyWorks (THE FIRST TAKE) - 可愛くてごめん feat. CHiCO, mona, ハコニワリリィ, 可憐なアイボリー, 高嶺のなでしこ.mp3",
+            image: "./assets/img/kawaiigomei.jpg",
+        },
+        {
+            name: "Wind - THE FIRST TAKE",
+            singer: "Akeboshi",
+            path: "./assets/music/Wind - Akeboshi (THE FIRST TAKE).mp3",
+            image: "./assets/img/windtft.jpg",
         },
         {
             name: "Tám Chữ Có",
