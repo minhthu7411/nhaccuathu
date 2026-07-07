@@ -1055,6 +1055,12 @@ const app = {
             image: "./assets/img/carpetman.jpg",
         },
         {
+            name: "Nếu Như Ta Chẳng Còn",
+            singer: "MCK (ft. A$AP Ướt Mi)",
+            path: "./assets/music/Nếu Như Ta Chẳng Còn - MCK (ft. A$AP Ướt Mi).mp3",
+            image: "./assets/img/neunhutachangcon.png",
+        },
+        {
             name: "What Does It Mean To You",
             singer: "Carpetman",
             path: "./assets/music/What Does It Mean To You - Carpetman.mp3",
@@ -1139,9 +1145,9 @@ const app = {
             image: "./assets/img/kemduyen.jpg",
         },
         {
-            name: "MASHUP LƠ DUYÊN",
+            name: "MASHUP LỠ DUYÊN",
             singer: "RUM ft NIT",
-            path: "./assets/music/MASHUP LƠ DUYÊN - RUM ft NIT.mp3",
+            path: "./assets/music/MASHUP LỠ DUYÊN - RUM ft NIT.mp3",
             image: "./assets/img/loduyen.jpg",
         },
         {
@@ -1883,6 +1889,12 @@ const app = {
             image: "./assets/img/mothuothanhbinh.jpg",
         },
         {
+            name: "Wind - THE FIRST TAKE",
+            singer: "Akeboshi",
+            path: "./assets/music/Wind - Akeboshi (THE FIRST TAKE).mp3",
+            image: "./assets/img/windtft.jpg",
+        },
+        {
             name: "Nandemonaiya - なんでもないや",
             singer: "Mone Kamshiraishi",
             path: "./assets/music/Nandemonaiya (なんでもないや) - Mone Kamshiraishi.mp3",
@@ -1985,6 +1997,12 @@ const app = {
             image: "./assets/img/ロクデナシ愛が灯る.jpg",
         },
         {
+            name: "As you don't know",
+            singer: "Rokudenashi",
+            path: "./assets/music/As you don't know - Rokudenashi.mp3",
+            image: "./assets/img/asyouknow.jpg",
+        },
+        {
             name: "Gaze",
             singer: "Rokudenashi",
             path: "./assets/music/Gaze - Rokudenashi.mp3",
@@ -2051,10 +2069,10 @@ const app = {
             image: "./assets/img/kawaiigomei.jpg",
         },
         {
-            name: "Wind - THE FIRST TAKE",
-            singer: "Akeboshi",
-            path: "./assets/music/Wind - Akeboshi (THE FIRST TAKE).mp3",
-            image: "./assets/img/windtft.jpg",
+            name: "SAWARUNA",
+            singer: "coco. & Hanemii",
+            path: "./assets/music/coco. & Hanemii - SAWARUNA.mp3",
+            image: "./assets/img/sawaruna.jpg",
         },
         {
             name: "Tám Chữ Có",
