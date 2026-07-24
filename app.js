@@ -1853,12 +1853,6 @@ const app = {
             image: "./assets/img/nutngot.jpg",
         },
         {
-            name: "Qua Những Tiếng Ve",
-            singer: "ToFu ft. Xesi & Urabe ( Prod. by VoVanDuc )",
-            path: "./assets/music/Qua Những Tiếng Ve - ToFu ft. Xesi & Urabe ( Prod. by VoVanDuc ).mp3",
-            image: "./assets/img/quanhungtiengve.jpg",
-        },
-        {
             name: "Sunshine Alone",
             singer: "Binz (ft. Rhymastic)",
             path: "./assets/music/Sunshine Alone - Binz (ft. Rhymastic).mp3",
@@ -2057,6 +2051,18 @@ const app = {
             image: "./assets/img/michiteyuku.jpg",
         },
         {
+            name: "Hien",
+            singer: "Kenshi Yonezu",
+            path: "./assets/music/Hien.mp3",
+            image: "./assets/img/hien.jpg",
+        },
+        {
+            name: "Dan Dan Kokoro",
+            singer: "Hikareteku",
+            path: "./assets/music/Dan Dan Kokoro - Hikareteku.mp3",
+            image: "./assets/img/DanDanKokoro.jpg",
+        },
+        {
             name: "群青",
             singer: "YOASOBI",
             path: "./assets/music/群青 (THE FIRST TAKE) - YOASOBI.mp3",
@@ -2073,6 +2079,12 @@ const app = {
             singer: "coco. & Hanemii",
             path: "./assets/music/coco. & Hanemii - SAWARUNA.mp3",
             image: "./assets/img/sawaruna.jpg",
+        },
+        {
+            name: "我愛你",
+            singer: "CodyLee(李)",
+            path: "./assets/music/CodyLee(李) - 我愛你.mp3",
+            image: "./assets/img/codylee.jpg",
         },
         {
             name: "Tám Chữ Có",
